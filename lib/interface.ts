@@ -6,4 +6,9 @@ interface ILog {
   platform?: 'web' | 'mini'
 }
 
-export type { ILog }
+interface IOption {
+  url: string
+  unit?: number
+  max?: number
+}
+export type { ILog, IOption }

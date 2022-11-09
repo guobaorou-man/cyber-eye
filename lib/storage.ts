@@ -40,7 +40,6 @@ class storage {
         JSON.stringify(this.singleToneLogArray)
       )
     }
-    console.log('插入', this.singleToneLogArray)
   }
 
   delete(index: number) {
@@ -56,11 +55,9 @@ class storage {
         JSON.stringify(this.singleToneLogArray)
       )
     }
-    console.log('删除', this.singleToneLogArray)
   }
 
   query() {
-    console.log('查询', this.singleToneLogArray.slice(0, this.unitCount))
     return this.singleToneLogArray.slice(0, this.unitCount)
   }
 }

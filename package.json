@@ -2,7 +2,7 @@
   "name": "cybereye",
   "private": false,
   "version": "0.0.2",
-  "license": "LGPL",
+  "license": "LGPL-2.1-only",
   "type": "module",
   "files": [
     "dist"

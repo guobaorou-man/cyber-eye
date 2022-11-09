@@ -1,4 +1,4 @@
-import { ILog } from './interface'
+import { ILog, IOption } from './interface'
 import http from './request'
 import { formatDate } from './util'
 import storage from './storage'
@@ -13,10 +13,10 @@ class cybereye {
    * @param uploadURL 上传文件地址
    * @param context 小程序上下文
    */
-  constructor(uploadURL: string, context?: any) {
+  constructor(option: IOption, context?: any) {
     this.context = context
-    this.uploadURL = uploadURL
-    this.storageInstance = new storage(5, 20, context)
+    this.uploadURL = option.url
+    this.storageInstance = new storage(option.unit, option.max, context)
     this.syncLog()
     console.log(
       'CyberEye Running',
@@ -36,7 +36,6 @@ class cybereye {
         .then((res) => {
           // 上传成功后删除记录
           this.storageInstance.delete(oldLogs.length)
-          console.log('日志上传请求成功', res)
           this.timer = setTimeout(() => {
             this.syncLog()
           }, 10000)
@@ -60,7 +59,6 @@ class cybereye {
    * @param content 日志内容
    */
   markALog(event: string, content: string) {
-    console.log('this markALog api', event, content)
     let newItem: ILog = {}
     newItem.type = event
     newItem.content = content
