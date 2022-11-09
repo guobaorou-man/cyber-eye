@@ -11,7 +11,7 @@
   "module": "./dist/cybereye.js",
   "exports": {
     ".": {
-      "improt": "./dist/cybereye.js",
+      "import": "./dist/cybereye.js",
       "require": "./dist/cybereye.umd.cjs"
     }
   },
