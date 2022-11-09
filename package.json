@@ -1,6 +1,6 @@
 {
   "name": "cybereye",
-  "private": true,
+  "private": false,
   "version": "0.0.1",
   "license": "LGPL",
   "type": "module",
