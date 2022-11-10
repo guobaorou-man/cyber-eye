@@ -2,7 +2,7 @@ import './style.css'
 import cybereye from '../lib/main'
 
 // 初始化日志管理库
-const CE = new cybereye({ url: 'https://www.baidu.com' })
+const CE = new cybereye({ url: 'http://127.0.0.1:3001/ApiSyncLog' })
 
 // 调用记录日志
 CE.markALog('msg', '初始化时记录一个日志')

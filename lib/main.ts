@@ -16,13 +16,8 @@ class cybereye {
   constructor(option: IOption, context?: any) {
     this.context = context
     this.uploadURL = option.url
-    this.storageInstance = new storage(option.unit, option.max, context)
+    this.storageInstance = new storage(option.unit, option.max, this.context)
     this.syncLog()
-    console.log(
-      'CyberEye Running',
-      this.uploadURL,
-      this.context ? this.context : ''
-    )
   }
 
   // 读取存量数据，如果存在则调用一次上传日志，否则设置一个延时任务
