@@ -4,12 +4,10 @@
   "license": "LGPL-2.1-only",
   "type": "module",
   "files": [
-    "dist",
-    "types"
+    "dist"
   ],
   "main": "./dist/cybereye.umd.cjs",
   "module": "./dist/cybereye.js",
-  "types": "./types/lib/main.d.ts",
   "exports": {
     ".": {
       "import": "./dist/cybereye.js",

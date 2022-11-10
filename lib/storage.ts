@@ -5,16 +5,23 @@ class storage {
   private unitCount: number
   private maxCount: number
   private context: any
+  private type: string
 
-  constructor(unitCount: number = 50, maxCount: number = 1000, context?: any) {
+  constructor(
+    unitCount: number = 50,
+    maxCount: number = 1000,
+    context: any,
+    type: string
+  ) {
     this.unitCount = unitCount
     this.maxCount = maxCount
     this.context = context
+    this.type = type
     let tempCache
-    if (this.context) {
-      tempCache = this.context.getStorageSync(this.storageKey)
+    if (this.type === 'web') {
+      tempCache = this.context.localStorage.getItem(this.storageKey)
     } else {
-      tempCache = window.localStorage.getItem(this.storageKey)
+      tempCache = this.context.getStorageSync(this.storageKey)
     }
     if (!tempCache) {
       tempCache = []
@@ -29,13 +36,13 @@ class storage {
     } else {
       this.singleToneLogArray.push(item)
     }
-    if (this.context) {
-      this.context.setStorageSync(
+    if (this.type === 'web') {
+      this.context.localStorage.setItem(
         this.storageKey,
         JSON.stringify(this.singleToneLogArray)
       )
     } else {
-      window.localStorage.setItem(
+      this.context.setStorageSync(
         this.storageKey,
         JSON.stringify(this.singleToneLogArray)
       )
@@ -44,13 +51,13 @@ class storage {
 
   delete(index: number) {
     this.singleToneLogArray = this.singleToneLogArray.slice(index)
-    if (this.context) {
-      this.context.setStorageSync(
+    if (this.type === 'web') {
+      this.context.localStorage.setItem(
         this.storageKey,
         JSON.stringify(this.singleToneLogArray)
       )
     } else {
-      window.localStorage.setItem(
+      this.context.setStorageSync(
         this.storageKey,
         JSON.stringify(this.singleToneLogArray)
       )
