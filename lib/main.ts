@@ -31,7 +31,7 @@ class cybereye {
       clearTimeout(this.timer)
     }
     const oldLogs = this.storageInstance.query()
-    if (oldLogs) {
+    if (oldLogs && oldLogs.length > 0) {
       http(this.uploadURL, oldLogs)
         .then((res) => {
           // 上传成功后删除记录
