@@ -1,14 +1,15 @@
 {
   "name": "cybereye",
-  "private": false,
-  "version": "0.0.2",
+  "version": "0.0.2-fixed0.02",
   "license": "LGPL-2.1-only",
   "type": "module",
   "files": [
-    "dist"
+    "dist",
+    "types"
   ],
   "main": "./dist/cybereye.umd.cjs",
   "module": "./dist/cybereye.js",
+  "types": "./types/lib/main.d.ts",
   "exports": {
     ".": {
       "import": "./dist/cybereye.js",
