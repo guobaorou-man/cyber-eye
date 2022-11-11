@@ -1,19 +1,21 @@
 {
   "name": "cybereye",
-  "version": "0.0.2-fixed0.02",
+  "version": "0.0.3",
   "license": "LGPL-2.1-only",
   "type": "module",
   "files": [
-    "dist"
+    "dist",
+    "types"
   ],
-  "main": "./dist/cybereye.umd.cjs",
-  "module": "./dist/cybereye.js",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.es.js",
   "exports": {
     ".": {
-      "import": "./dist/cybereye.js",
-      "require": "./dist/cybereye.umd.cjs"
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js"
     }
   },
+  "typings": "types/main.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
