@@ -62,8 +62,8 @@ markALog(event, content)
 
 | 参数    | 类型   | 是否必填 | 说明                                     |
 | ------- | ------ | -------- | ---------------------------------------- |
-| event   | string | 是       | 记录日志的类型。可自定义，限制长度（10） |
-| content | string | 是       | 记录日志具体的内容。限制长度（500）      |
+| event   | string | 是       | 记录日志的类型。可自定义，限制长度（10）<font color=#dd00000 >(尚未限制)</font> |
+| content | string | 是       | 记录日志具体的内容。限制长度（500）<font color=#dd00000 >(尚未限制)</font> |
 
 ### 上报数据格式说明
 
@@ -79,10 +79,10 @@ markALog(event, content)
 ]
 ```
 
-| 属性       | 说明                                                        |     |
-| ---------- | ----------------------------------------------------------- | --- |
-| type       | 对应 markALog 的 event，自定义日志类型。                    |     |
-| content    | 对应 markALog 的 content，日志内容。                        |     |
-| dateTime   | 记录日志的时间。                                            |     |
-| platform   | 日志的平台：'web' 代表 web；'mini' 代表 微信小程序          |     |
-| deviceInfo | web 平台为 agent 信息；微信小程序为 wx.getSystemInfo 信息； |     |
+| 属性       | 说明                                                        |
+| ---------- | ----------------------------------------------------------- |
+| type       | 对应 markALog 的 event，自定义日志类型。                    |
+| content    | 对应 markALog 的 content，日志内容。                        |
+| dateTime   | 记录日志的时间。                                            |
+| platform   | 日志的平台：'web' 代表 web；'mini' 代表 微信小程序          |
+| deviceInfo | web 平台为 agent 信息；微信小程序为 wx.getSystemInfo 信息； |
